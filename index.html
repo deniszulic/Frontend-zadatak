@@ -10,22 +10,6 @@
             border-radius: 5px;
             position: absolute;
         }
-
-        .slideshow {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-        }
-
-        .slideshow1 {
-            margin: 0;
-            position: absolute;
-            top: 28%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-        }
         #footer {
             position: fixed;
             bottom: 0;
@@ -126,14 +110,14 @@
         <div class="tekst">
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
         </div>
-        <div class="slideshow1">
+        <div style="margin-top:90px;">
             <img src="slike/slider-image-1.jpg" style="width:260px;left:500px;" class="slides" id="pic3" />
             <img src="slike/slider-image-2.jpg" style="width:120px;left:770px;" class="slides" id="pic4" />
             <img src="slike/slider-image-3.jpg" style="width:180px;left:900px;" class="slides" id="pic5" />
             <img src="slike/slider-image-4.jpg" style="width:220px;left:270px;" class="slides" id="pic2" />
             <img src="slike/slider-image-8.jpg" style="width:260px;left:0px;" class="slides" id="pic1" />
         </div>
-        <div class="slideshow">
+        <div style="margin-top:300px;">
             <img src="slike/slider-image-5.jpg" style="width:260px;left:550px;" class="slides" id="pic9" />
             <img src="slike/slider-image-6.jpg" style="width:120px;left:190px;" class="slides" id="pic7" />
             <img src="slike/slider-image-7.jpg" style="width:180px;left:0px;" class="slides" id="pic6" />
@@ -154,8 +138,6 @@
         var index = 1;
         function klik(broj) {
             prikazslike(index += broj);
-            //index+=broj;
-            console.log(index);
         }
         function prikazslike(broj) {
             var slike = document.getElementsByClassName("slides");
