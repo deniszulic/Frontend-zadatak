@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .slides {
+            height: 200px;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        .slideshow {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .slideshow1 {
+            margin: 0;
+            position: absolute;
+            top: 28%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .center {
+            margin: -10px auto;
+            width: 941px;
+            background-color: #DDDDDD;
+            padding: 20px;
+        }
+
+        #center {
+            background-color: #DDDDDD;
+            width: 941px;
+            margin: 0 auto;
+            text-align: center;
+            height: 100px;
+        }
+
+        #lijevo {
+            background: url('slike/arrow-gray-left.png') no-repeat;
+            background-position: center;
+        }
+
+        #lijevo:hover {
+            background: url('slike/arrow-blue-left.png') no-repeat;
+            background-position: center;
+            border-color: blue;
+        }
+
+        #desno {
+            background: url('slike/arrow-gray-right.png') no-repeat;
+            background-position: center;
+        }
+
+        #desno:hover {
+            background: url('slike/arrow-blue-right.png') no-repeat;
+            background-position: center;
+            border-color: blue;
+        }
+
+        .naslov {
+            position: absolute;
+            width: 300.93px;
+            height: 120px;
+            /*float:right;*/
+
+            font-family: Source Sans Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            letter-spacing: -0.2px;
+
+            color: #134880;
+            left: 1100px;
+            margin-top: 180px;
+        }
+
+        .tekst {
+            position: absolute;
+            width: 300.93px;
+            height: 156px;
+            left: 0px;
+            top: 140px;
+
+            font-family: Source Sans Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 26px;
+
+            /* or 144% */
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.2px;
+
+            color: #484A4C;
+            left: 1100px;
+            margin-top: 340px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="center">
+            <p style="color:white;text-align: center;">Skup drugih elemenata na stranici</p>
+        </div>
+        <div class="naslov">
+            Lorem ipsum dolor sit amet consectetuer adipiscing elit
+        </div>
+        <div class="tekst">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+        </div>
+        <div class="slideshow1">
+            <img src="slike/slider-image-1.jpg" style="width:260px;left:500px;" class="slides" id="pic3" />
+            <img src="slike/slider-image-2.jpg" style="width:120px;left:770px;" class="slides" id="pic4" />
+            <img src="slike/slider-image-3.jpg" style="width:180px;left:900px;" class="slides" id="pic5" />
+            <img src="slike/slider-image-4.jpg" style="width:220px;left:270px;" class="slides" id="pic2" />
+            <img src="slike/slider-image-8.jpg" style="width:260px;left:0px;" class="slides" id="pic1" />
+        </div>
+        <div class="slideshow">
+            <img src="slike/slider-image-5.jpg" style="width:260px;left:550px;" class="slides" id="pic9" />
+            <img src="slike/slider-image-6.jpg" style="width:120px;left:190px;" class="slides" id="pic7" />
+            <img src="slike/slider-image-7.jpg" style="width:180px;left:0px;" class="slides" id="pic6" />
+            <img src="slike/slider-image-9.jpg" style="width:220px;left:320px;" class="slides" id="pic8" />
+        </div>
+        <div style="position:absolute;display:flex;flex-direction:column;bottom:360px;left:1030px;">
+            <button onclick="klik(1)" id="lijevo" style="width: 60px;height: 60px;left:60px;top: 0px;"></button>
+            <button onclick="klik(-1)" id="desno" style="width: 60px;height: 60px;left:0px;top: 70px;"></button>
+        </div>
+        <div id="footer">
+            <div id="center">
+                <p style="padding-top:50px;color:white;">Skup drugih elemenata na stranici</p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var index = 1;
+        function klik(broj) {
+            prikazslike(index += broj);
+            //index+=broj;
+            console.log(index);
+        }
+        function prikazslike(broj) {
+            var slike = document.getElementsByClassName("slides");
+            if (broj < 1) {
+                index = slike.length - 4;
+            }
+        }
+        $(document).ready(function () {
+            $("#lijevo").unbind('click');
+            $("#lijevo").click(function () {
+                if (index == 2) {
+                    $("#pic5").animate({
+                        left: '630px'
+                    })
+                    $("#pic4").animate({
+                        left: '500px'
+                    })
+                    $("#pic3").animate({
+                        left: '230px'
+                    })
+                    $("#pic2").animate({
+                        left: '0px'
+                    })
+                    $("#pic1").animate({
+                        left: '820px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '360px'
+                    })
+                    $("#pic8").animate({
+                        left: '130px'
+                    })
+                    $("#pic7").animate({
+                        left: '0px'
+                    })
+                    $("#pic6").animate({
+                        left: '900px'
+                    })
+                }
+                if (index == 3) {
+                    $("#pic5").animate({
+                        left: '400px'
+                    })
+                    $("#pic4").animate({
+                        left: '270px'
+                    })
+                    $("#pic3").animate({
+                        left: '0px'
+                    })
+                    $("#pic2").animate({
+                        left: '860px'
+                    })
+                    $("#pic1").animate({
+                        left: '590px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '230px'
+                    })
+                    $("#pic8").animate({
+                        left: '0px'
+                    })
+                    $("#pic7").animate({
+                        left: '900px'
+                    })
+                    $("#pic6").animate({
+                        left: '710px'
+                    })
+                }
+                if (index == 4) {
+                    $("#pic5").animate({
+                        left: '130px'
+                    })
+                    $("#pic4").animate({
+                        left: '0px'
+                    })
+                    $("#pic3").animate({
+                        left: '820px'
+                    })
+                    $("#pic2").animate({
+                        left: '590px'
+                    })
+                    $("#pic1").animate({
+                        left: '320px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '0px'
+                    })
+                    $("#pic8").animate({
+                        left: '820px'
+                    })
+                    $("#pic7").animate({
+                        left: '690px'
+                    })
+                    $("#pic6").animate({
+                        left: '500px'
+                    })
+                }
+                if (index == 5) {
+                    $("#pic5").animate({
+                        left: '0px'
+                    })
+                    $("#pic4").animate({
+                        left: '960px'
+                    })
+                    $("#pic3").animate({
+                        left: '690px'
+                    })
+                    $("#pic2").animate({
+                        left: '460px'
+                    })
+                    $("#pic1").animate({
+                        left: '190px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '820px'
+                    })
+                    $("#pic8").animate({
+                        left: '590px'
+                    })
+                    $("#pic7").animate({
+                        left: '460px'
+                    })
+                    $("#pic6").animate({
+                        left: '270px'
+                    })
+                }
+                if (index == 6) {
+                    $("#pic5").animate({
+                        left: '900px'
+                    })
+                    $("#pic4").animate({
+                        left: '770px'
+                    })
+                    $("#pic3").animate({
+                        left: '500px'
+                    })
+                    $("#pic2").animate({
+                        left: '270px'
+                    })
+                    $("#pic1").animate({
+                        left: '0px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '550px'
+                    })
+                    $("#pic8").animate({
+                        left: '320px'
+                    })
+                    $("#pic7").animate({
+                        left: '190px'
+                    })
+                    $("#pic6").animate({
+                        left: '0px'
+                    })
+
+                    index = 1;
+                }
+            })
+            $("#desno").unbind('click');
+            $("#desno").click(function () {
+                if (index == 1) {
+                    $("#pic5").animate({
+                        left: '900px'
+                    })
+                    $("#pic4").animate({
+                        left: '770px'
+                    })
+                    $("#pic3").animate({
+                        left: '500px'
+                    })
+                    $("#pic2").animate({
+                        left: '270px'
+                    })
+                    $("#pic1").animate({
+                        left: '0px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '550px'
+                    })
+                    $("#pic8").animate({
+                        left: '320px'
+                    })
+                    $("#pic7").animate({
+                        left: '190px'
+                    })
+                    $("#pic6").animate({
+                        left: '0px'
+                    })
+                    index = 1;
+                }
+                if (index == 2) {
+                    $("#pic5").animate({
+                        left: '630px'
+                    })
+                    $("#pic4").animate({
+                        left: '500px'
+                    })
+                    $("#pic3").animate({
+                        left: '230px'
+                    })
+                    $("#pic2").animate({
+                        left: '0px'
+                    })
+                    $("#pic1").animate({
+                        left: '820px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '360px'
+                    })
+                    $("#pic8").animate({
+                        left: '130px'
+                    })
+                    $("#pic7").animate({
+                        left: '0px'
+                    })
+                    $("#pic6").animate({
+                        left: '900px'
+                    })
+                }
+                if (index == 3) {
+                    $("#pic5").animate({
+                        left: '400px'
+                    })
+                    $("#pic4").animate({
+                        left: '270px'
+                    })
+                    $("#pic3").animate({
+                        left: '0px'
+                    })
+                    $("#pic2").animate({
+                        left: '860px'
+                    })
+                    $("#pic1").animate({
+                        left: '590px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '230px'
+                    })
+                    $("#pic8").animate({
+                        left: '0px'
+                    })
+                    $("#pic7").animate({
+                        left: '900px'
+                    })
+                    $("#pic6").animate({
+                        left: '710px'
+                    })
+                }
+                if (index == 4) {
+                    $("#pic5").animate({
+                        left: '130px'
+                    })
+                    $("#pic4").animate({
+                        left: '0px'
+                    })
+                    $("#pic3").animate({
+                        left: '820px'
+                    })
+                    $("#pic2").animate({
+                        left: '590px'
+                    })
+                    $("#pic1").animate({
+                        left: '320px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '0px'
+                    })
+                    $("#pic8").animate({
+                        left: '820px'
+                    })
+                    $("#pic7").animate({
+                        left: '690px'
+                    })
+                    $("#pic6").animate({
+                        left: '500px'
+                    })
+                }
+                if (index == 5) {
+                    $("#pic5").animate({
+                        left: '0px'
+                    })
+                    $("#pic4").animate({
+                        left: '960px'
+                    })
+                    $("#pic3").animate({
+                        left: '690px'
+                    })
+                    $("#pic2").animate({
+                        left: '460px'
+                    })
+                    $("#pic1").animate({
+                        left: '190px'
+                    })
+
+                    $("#pic9").animate({
+                        left: '820px'
+                    })
+                    $("#pic8").animate({
+                        left: '590px'
+                    })
+                    $("#pic7").animate({
+                        left: '460px'
+                    })
+                    $("#pic6").animate({
+                        left: '270px'
+                    })
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
