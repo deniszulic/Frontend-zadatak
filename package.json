@@ -1,0 +1,25 @@
+{
+  "name": "frontend-zadatak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deniszulic/Frontend-zadatak.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deniszulic/Frontend-zadatak/issues"
+  },
+  "homepage": "https://github.com/deniszulic/Frontend-zadatak#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0"
+  }
+}
