@@ -95,7 +95,7 @@ img {
 #button1 {
   width: 60px;
   height: 60px;
-  background: url("slike/arrow-gray-right.png") no-repeat;
+  background: url("../../assets/arrow-gray-right.png") no-repeat;
   background-position: center;
   border: 1px solid #dddddd;
   box-sizing: border-box;
@@ -105,26 +105,26 @@ img {
 #button2 {
   width: 60px;
   height: 60px;
-  background: url("slike/arrow-gray-right.png") no-repeat;
+  background: url("../../assets/arrow-gray-right.png") no-repeat;
   background-position: center;
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 5px;
-  background: url("slike/arrow-gray-left.png") no-repeat;
+  background: url("../../assets/arrow-gray-left.png") no-repeat;
   background-position: center;
 }
 
 #button1:hover {
-  background: url("slike/arrow-blue-right.png") no-repeat;
+  background: url("../../assets/arrow-blue-right.png") no-repeat;
   background-position: center;
   border-color: blue;
 }
 
 #button2:hover {
-  background: url("slike/arrow-blue-right.png") no-repeat;
+  background: url("../../assets/arrow-blue-right.png") no-repeat;
   background-position: center;
   border-color: blue;
-  background: url("slike/arrow-blue-left.png") no-repeat;
+  background: url("../../assets/arrow-blue-left.png") no-repeat;
   background-position: center;
 }
 
