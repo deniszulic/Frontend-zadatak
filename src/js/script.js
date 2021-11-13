@@ -88,7 +88,6 @@ var fourth = () => {
 };*/
 let slides=$(".toplist").children();
 let slides_bottom=$(".bottomlist").children();
-console.log(slides.length)
 //for(let i=0;i<slides.length;i++){
   for(let i of [...Array(slides.length).keys()]){
   slides[i].style.display="none";
@@ -138,32 +137,59 @@ $("#button1").click(() => {
   /*console.log(slides)
   console.log(slides[0])
   console.log(indexaa);*/
-  $(".toplist").find(":first-child").remove().appendTo(".toplist")/*.attr("style", "display:block")*/;
-  $(".toplist").find(":last-child").attr("style", "display:none");
+  /*$(".toplist").find(":first-child").css({
+    "animation-duration":"0.01s",
+    "animation-name": "fadeout",
+    "-webkit-animation-name": "fadeout",
+  "-webkit-animation-duration": "0.01s",
+  })*/
+  $(".toplist").find(":first-child").hide('slow',()=>{
+    $(".toplist").find(":first-child").remove().appendTo(".toplist");
+    $(".toplist").find(":last-child").attr("style", "display:none");
   if(indexaa>=9) indexaa=0;
   slides[indexaa].style.display="block";
   indexaa++;
+  })
 
+  $(".bottomlist").find(":first-child").hide('slow',()=>{
   $(".bottomlist").find(":first-child").remove().appendTo(".bottomlist");
   $(".bottomlist").find(":last-child").attr("style", "display:none");
   if(bottomindex>=9) bottomindex=0;
-  console.log(bottomindex)
   slides_bottom[bottomindex].style.display="block";
   bottomindex++;
-});
+})});
 $("#button2").click(() => {
   /*third();
   fourth();*/
 
-  $(".toplist").find(":last-child").remove().prependTo(".toplist")/*.attr("style", "display:block")*/;
+//console.log(slides)
+//console.log(displayed[4])
+
+/*var displayed = slides.filter(function() {
+  var element = $(this);
+
+  if(element.css('display') == 'none') {
+      return false;
+  }
+
+  return true;
+});
+for(let i=0;i<displayed.length;i++){
+  console.log(displayed[i])
+}*/
+$(".toplist").children().eq(4).hide('slow',()=>{
+  $(".toplist").find(":last-child").remove().prependTo(".toplist");
   $(".toplist").find(":first-child").attr("style", "display:block");
   if(indexaa<=0) indexaa=9;
   slides[indexaa-1].style.display="none";
   indexaa--;
+})
 
-  $(".bottomlist").find(":last-child").remove().prependTo(".bottomlist")/*.attr("style", "display:block")*/;
+$(".bottomlist").children().eq(3).hide('slow',()=>{
+  $(".bottomlist").find(":last-child").remove().prependTo(".bottomlist");
   $(".bottomlist").find(":first-child").attr("style", "display:block");
   if(bottomindex<=0) bottomindex=9;
   slides_bottom[bottomindex-1].style.display="none";
   bottomindex--;
+})
 });
