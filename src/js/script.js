@@ -88,14 +88,18 @@ var fourth = () => {
 };*/
 let slides=$(".toplist").children();
 let slides_bottom=$(".bottomlist").children();
-for(let i=0;i<slides.length;i++){
+console.log(slides.length)
+//for(let i=0;i<slides.length;i++){
+  for(let i of [...Array(slides.length).keys()]){
   slides[i].style.display="none";
   slides_bottom[i].style.display="none";
 }
-for(let i=0;i<5;i++){
+//for(let i=0;i<5;i++){
+  for(let i of [...Array(5).keys()]){
   slides[i].style.display="block";
 }
-for(let i=0;i<4;i++){
+//for(let i=0;i<4;i++){
+for(let i of [...Array(4).keys()]){
   slides_bottom[i].style.display="block";
 }
 //console.log(slides[0])
