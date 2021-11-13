@@ -146,17 +146,19 @@ $("#button1").click(() => {
   $(".toplist").find(":first-child").hide('slow',()=>{
     $(".toplist").find(":first-child").remove().appendTo(".toplist");
     $(".toplist").find(":last-child").attr("style", "display:none");
-  if(indexaa>=9) indexaa=0;
+  /*if(indexaa>=9) indexaa=0;
   slides[indexaa].style.display="block";
-  indexaa++;
+  indexaa++;*/
+  $(".toplist").children().eq(4).attr("style", "display:block")
   })
 
   $(".bottomlist").find(":first-child").hide('slow',()=>{
   $(".bottomlist").find(":first-child").remove().appendTo(".bottomlist");
   $(".bottomlist").find(":last-child").attr("style", "display:none");
-  if(bottomindex>=9) bottomindex=0;
+  /*if(bottomindex>=9) bottomindex=0;
   slides_bottom[bottomindex].style.display="block";
-  bottomindex++;
+  bottomindex++;*/
+  $(".bottomlist").children().eq(3).attr("style", "display:block")
 })});
 $("#button2").click(() => {
   /*third();
@@ -180,16 +182,18 @@ for(let i=0;i<displayed.length;i++){
 $(".toplist").children().eq(4).hide('slow',()=>{
   $(".toplist").find(":last-child").remove().prependTo(".toplist");
   $(".toplist").find(":first-child").attr("style", "display:block");
-  if(indexaa<=0) indexaa=9;
+  /*if(indexaa<=0) indexaa=9;
   slides[indexaa-1].style.display="none";
-  indexaa--;
+  indexaa--;*/
+  $(".toplist").children().eq(5).attr("style", "display:none")
 })
 
 $(".bottomlist").children().eq(3).hide('slow',()=>{
   $(".bottomlist").find(":last-child").remove().prependTo(".bottomlist");
   $(".bottomlist").find(":first-child").attr("style", "display:block");
-  if(bottomindex<=0) bottomindex=9;
+  /*if(bottomindex<=0) bottomindex=9;
   slides_bottom[bottomindex-1].style.display="none";
-  bottomindex--;
+  bottomindex--;*/
+  $(".bottomlist").children().eq(4).attr("style", "display:none")
 })
 });
