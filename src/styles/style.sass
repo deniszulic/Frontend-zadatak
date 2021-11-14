@@ -3,45 +3,45 @@ $arrow2:url("slike/arrow-gray-left.png") no-repeat
 $arrow3:url("slike/arrow-blue-right.png") no-repeat
 $arrow4:url("slike/arrow-blue-left.png") no-repeat
 $font:SourceSansPro
+$back-col:#dddddd
+$border-line:1px solid #dddddd
+$blue:blue
+$center:center
+$flex:flex
+$column:column
+$row:row
+$left:left
+$border-box:border-box
+$top-page:0px auto
+$width-height:60px
+$border-radius:5px
 body
   margin: 0
   padding: 0
 
-.wrapper1, header, .wrapper2
-  margin-right: auto
-  margin-left: auto
-  width: 1920px
-
-.wrapper1
-  margin-top: 60px
-  float: left
-  display: flex
-  width: 1230px
-  margin-left: 100px
-
-.wrapper2
-  margin-top: 60px
-  float: left
-  display: flex
-  width: 1230px
-  margin-left: 100px
-  margin-top: 0px
-  width: 1080px
-  margin-left: 150px
-
-header, .header1, .header2, footer
+footer
   width: 941px
   height: 100px
-  display: flex
+  display: $flex
+
+header
+  margin: $top-page
+  display: $flex
+  height: 100px
+  width: 941px
 
 .header1, .header2, .center
-  background-color: #dddddd
+  background-color: $back-col
   width: 300px
   border-radius: 0px 0px 5px 5px
+
+.header1
+  height: 100px
 
 .header2
   width: 621px
   margin-left: 19px
+  height: 100px
 
 .title, .title2
   margin-top: 39px
@@ -59,7 +59,7 @@ footer
   width: 100%
 
 .center
-  margin: 0px auto
+  margin: $top-page
   width: 941px
   border-radius: 5px 5px 0px 0px
 
@@ -69,88 +69,106 @@ footer
 
 img
   height: 200px
-  border-radius: 5px
+  border-radius: $border-radius
   margin: 0px 5px 10px 0px
 
-.btn
-  position: absolute
-  margin-top: 270px
-  margin-left: 1050px
-
-.btn1
-  position: absolute
-  margin-top: 270px
-  margin-left: 1050px
-  margin-top: 340px
-
 #button1
-  width: 60px
-  height: 60px
+  width: $width-height
+  height: $width-height
   background: $arrow1
-  background-position: center
-  border: 1px solid #dddddd
-  box-sizing: border-box
-  border-radius: 5px
+  background-position: $center
+  border: $border-line
+  box-sizing: $border-box
+  border-radius: $border-radius
 
 #button2
-  width: 60px
-  height: 60px
+  width: $width-height
+  height: $width-height
   background: $arrow1
-  background-position: center
-  border: 1px solid #dddddd
-  box-sizing: border-box
-  border-radius: 5px
+  background-position: $center
+  border: $border-line
+  box-sizing: $border-box
+  border-radius: $border-radius
   background: $arrow2
-  background-position: center
+  background-position: $center
 
 #button1:hover
   background: $arrow3
-  background-position: center
-  border-color: blue
+  background-position: $center
+  border-color: $blue
 
 #button2:hover
   background: $arrow3
-  background-position: center
-  border-color: blue
+  background-position: $center
+  border-color: $blue
   background: $arrow4
-  background-position: center
+  background-position: $center
 
 h1
-  margin-left: 1180px
-  margin-top: 160px
-  position: absolute
   width: 300.93px
   height: 120px
-  left: 0px
-  top: 0px
   font-family: $font
   font-size: 32px
   line-height: 37px
-  display: flex
-  align-items: flex-end
   letter-spacing: -0.2px
   color: #134880
 
 .description
-  margin-left: 1180px
-  margin-top: 160px
-  position: absolute
   width: 300.93px
-  height: 120px
-  left: 0px
-  top: 0px
-  font-family: $font
-  font-size: 32px
-  line-height: 37px
-  display: flex
-  align-items: flex-end
-  letter-spacing: -0.2px
-  color: #134880
-  position: absolute
-  margin-top: 160px
   height: 156px
-  top: 140px
+  font-family: $font
+  letter-spacing: -0.2px
   font-size: 18px
   line-height: 26px
-  align-items: center
+  align-items: $center
   color: #484a4c
+
+.container
+  margin-top: $width-height
+  display: $flex
+  flex-direction: $column
+
+.toplist
+  flex-direction: $row
+  width: 1000px
+  float: $left
+  display: $flex
+
+.bottomlist
+  float: $left
+  display: $flex
+
+.btn1
+  float: right
+  margin-right: 20px
+
+.container2
+  width: 1080px
+  flex-direction: $row
+
+.nested-flex
+  flex-direction: $column
+  margin-top: 35px
+
+.main-container
+  display: $flex
+
+img
+  -webkit-animation-name: img
+  -webkit-animation-duration: 1.5s
+  animation-name: img
+  animation-duration: 1.5s
+
+@-webkit-keyframes img
+  from
+    opacity: .4
+
+  to
+    opacity: 1
+
+@keyframes img
+  from
+    opacity: .4
+
+  to
+    opacity: 1
