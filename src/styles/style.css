@@ -14,7 +14,6 @@ footer {
 header {
   margin: 0px auto;
   display: flex;
-  /*height: 100px */
   width: 941px;
   height: 100px;
 }
@@ -76,12 +75,10 @@ img {
 #button2 {
   width: 60px;
   height: 60px;
-  background: url("../../assets/arrow-gray-right.png") no-repeat;
-  background-position: center;
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 5px;
-  background: url("../../assets/arrow-gray-right.png") no-repeat;
+  background: url("../../assets/arrow-gray-left.png") no-repeat;
   background-position: center;
 }
 
@@ -99,12 +96,8 @@ img {
 
 h1, .description {
   width: 300.93px;
-  /*height: 120px*/
   font-family: Source Sans Pro;
-  /*font-size: 32px*/
-  /*line-height: 37px*/
   letter-spacing: -0.2px;
-  /*color: #134880*/
   height: 120px;
   font-size: 32px;
   line-height: 37px;
@@ -112,7 +105,6 @@ h1, .description {
 }
 
 .description {
-  /*height: 156px */
   align-items: center;
   height: 156px;
   font-size: 18px;

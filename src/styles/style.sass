@@ -5,19 +5,14 @@ body
   padding: 0
 
 footer
-  //width: 941px
-  //height: 100px
   display: $flex
   position: absolute
   bottom: 0
-  //width: 100%
   @include width-height(100%, 100px)
 
 header
   margin: $top-page
   display: $flex
-  /*height: 100px
-  //width: 941px
   @include width-height(941px, 100px)
 
 .header1, .header2, .center
@@ -29,15 +24,11 @@ header
   height: 100px
 
 .header2
-  //width: 621px
   margin-left: 19px
-  //height: 100px
   @include width-height(621px, 100px)
 
 .title, .title2
   margin-top: 39px
-  //width: 245px
-  //height: 18px
   @include width-height(245px, 18px)
   top: 29px
   margin-left: 80px
@@ -60,60 +51,33 @@ img
   margin: 0px 5px 10px 0px
 
 #button1
-  //width: $width-height
-  //height: $width-height
   @include width-height($width-height, $width-height)
-  //background: $arrow1
-  //background-position: $center
   @include buttons($arrow1, $center)
-  //border: $border-line
-  //box-sizing: $border-box
   @include borderandbox($border-line,$border-box)
   @include border-radius($border-radius)
 
 #button2
-  //width: $width-height
-  //height: $width-height
   @include width-height($width-height, $width-height)
-  //background: $arrow1
-  //background-position: $center
-  @include buttons($arrow1, $center)
-  //border: $border-line
-  //box-sizing: $border-box
   @include borderandbox($border-line,$border-box)
   @include border-radius($border-radius)
-  //background: $arrow2
-  //background-position: $center
-  @include buttons($arrow1, $center)
+  @include buttons($arrow2, $center)
 
 #button1:hover
-  //background: $arrow3
-  //background-position: $center
   @include buttons($arrow3, $center)
   border-color: $blue
 
 #button2:hover
-  //background: $arrow4
-  //background-position: $center
   @include buttons($arrow4, $center)
   border-color: $blue
 
 h1, .description
   width: 300.93px
-  /*height: 120px*/
   font-family: $font
-  /*font-size: 32px*/
-  /*line-height: 37px*/
   letter-spacing: -0.2px
-  /*color: #134880*/
   @include footer(120px, 32px, 37px, #134880)
 
 .description
-  /*height: 156px
-  //font-size: 18px
-  //line-height: 26px
   align-items: $center
-  //color: #484a4c
   @include footer(156px, 18px, 26px, #484a4c)
 
 .container
@@ -124,13 +88,9 @@ h1, .description
 .toplist
   flex-direction: $row
   width: 1000px
-  //float: $left
-  //display: $flex
   @include float-display($left, $flex)
 
 .bottomlist
-  //float: $left
-  //display: $flex
   @include float-display($left, $flex)
 
 .btn1
