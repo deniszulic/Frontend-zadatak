@@ -1,67 +1,54 @@
-$arrow1:url("slike/arrow-gray-right.png") no-repeat
-$arrow2:url("slike/arrow-gray-left.png") no-repeat
-$arrow3:url("slike/arrow-blue-right.png") no-repeat
-$arrow4:url("slike/arrow-blue-left.png") no-repeat
-$font:SourceSansPro
-$back-col:#dddddd
-$border-line:1px solid #dddddd
-$blue:blue
-$center:center
-$flex:flex
-$column:column
-$row:row
-$left:left
-$border-box:border-box
-$top-page:0px auto
-$width-height:60px
-$border-radius:5px
+@import variables
+@import mixin
 body
   margin: 0
   padding: 0
 
 footer
-  width: 941px
-  height: 100px
+  //width: 941px
+  //height: 100px
   display: $flex
+  position: absolute
+  bottom: 0
+  //width: 100%
+  @include width-height(100%, 100px)
 
 header
   margin: $top-page
   display: $flex
-  height: 100px
-  width: 941px
+  /*height: 100px
+  //width: 941px
+  @include width-height(941px, 100px)
 
 .header1, .header2, .center
   background-color: $back-col
   width: 300px
-  border-radius: 0px 0px 5px 5px
+  @include border-radius (0px 0px 5px 5px)
 
 .header1
   height: 100px
 
 .header2
-  width: 621px
+  //width: 621px
   margin-left: 19px
-  height: 100px
+  //height: 100px
+  @include width-height(621px, 100px)
 
 .title, .title2
   margin-top: 39px
-  width: 245px
-  height: 18px
+  //width: 245px
+  //height: 18px
+  @include width-height(245px, 18px)
   top: 29px
   margin-left: 80px
   font-size: 15px
   font-family: "HelveticaNeue"
   color: #fff
 
-footer
-  position: absolute
-  bottom: 0
-  width: 100%
-
 .center
   margin: $top-page
   width: 941px
-  border-radius: 5px 5px 0px 0px
+  @include border-radius (5px 5px 0px 0px)
 
 .title2
   top: 42px
@@ -69,59 +56,65 @@ footer
 
 img
   height: 200px
-  border-radius: $border-radius
+  @include border-radius($border-radius)
   margin: 0px 5px 10px 0px
 
 #button1
-  width: $width-height
-  height: $width-height
-  background: $arrow1
-  background-position: $center
-  border: $border-line
-  box-sizing: $border-box
-  border-radius: $border-radius
+  //width: $width-height
+  //height: $width-height
+  @include width-height($width-height, $width-height)
+  //background: $arrow1
+  //background-position: $center
+  @include buttons($arrow1, $center)
+  //border: $border-line
+  //box-sizing: $border-box
+  @include borderandbox($border-line,$border-box)
+  @include border-radius($border-radius)
 
 #button2
-  width: $width-height
-  height: $width-height
-  background: $arrow1
-  background-position: $center
-  border: $border-line
-  box-sizing: $border-box
-  border-radius: $border-radius
-  background: $arrow2
-  background-position: $center
+  //width: $width-height
+  //height: $width-height
+  @include width-height($width-height, $width-height)
+  //background: $arrow1
+  //background-position: $center
+  @include buttons($arrow1, $center)
+  //border: $border-line
+  //box-sizing: $border-box
+  @include borderandbox($border-line,$border-box)
+  @include border-radius($border-radius)
+  //background: $arrow2
+  //background-position: $center
+  @include buttons($arrow1, $center)
 
 #button1:hover
-  background: $arrow3
-  background-position: $center
+  //background: $arrow3
+  //background-position: $center
+  @include buttons($arrow3, $center)
   border-color: $blue
 
 #button2:hover
-  background: $arrow3
-  background-position: $center
+  //background: $arrow4
+  //background-position: $center
+  @include buttons($arrow4, $center)
   border-color: $blue
-  background: $arrow4
-  background-position: $center
 
-h1
+h1, .description
   width: 300.93px
-  height: 120px
+  /*height: 120px*/
   font-family: $font
-  font-size: 32px
-  line-height: 37px
+  /*font-size: 32px*/
+  /*line-height: 37px*/
   letter-spacing: -0.2px
-  color: #134880
+  /*color: #134880*/
+  @include footer(120px, 32px, 37px, #134880)
 
 .description
-  width: 300.93px
-  height: 156px
-  font-family: $font
-  letter-spacing: -0.2px
-  font-size: 18px
-  line-height: 26px
+  /*height: 156px
+  //font-size: 18px
+  //line-height: 26px
   align-items: $center
-  color: #484a4c
+  //color: #484a4c
+  @include footer(156px, 18px, 26px, #484a4c)
 
 .container
   margin-top: $width-height
@@ -131,12 +124,14 @@ h1
 .toplist
   flex-direction: $row
   width: 1000px
-  float: $left
-  display: $flex
+  //float: $left
+  //display: $flex
+  @include float-display($left, $flex)
 
 .bottomlist
-  float: $left
-  display: $flex
+  //float: $left
+  //display: $flex
+  @include float-display($left, $flex)
 
 .btn1
   float: right
@@ -154,21 +149,21 @@ h1
   display: $flex
 
 img
-  -webkit-animation-name: img
-  -webkit-animation-duration: 1.5s
-  animation-name: img
-  animation-duration: 1.5s
+  -webkit-animation-name: $animation-name
+  -webkit-animation-duration: $animation-time
+  animation-name: $animation-name
+  animation-duration: $animation-time
 
 @-webkit-keyframes img
   from
-    opacity: .4
+    opacity: $opacity2
 
   to
-    opacity: 1
+    opacity: $opacity1
 
 @keyframes img
   from
-    opacity: .4
+    opacity: $opacity2
 
   to
-    opacity: 1
+    opacity: $opacity1
