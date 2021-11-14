@@ -24,10 +24,12 @@ $("#button1").click(() => {
   })
 });
 $("#button2").click(() => {
+  $("#button2").attr("disabled",true);
   $(".toplist").children().eq(4).hide('slow', () => {
     $(".toplist").find(":last-child").remove().prependTo(".toplist");
     $(".toplist").find(":first-child").attr("style", "display:block");
     $(".toplist").children().eq(5).attr("style", "display:none")
+    $("#button2").attr("disabled",false);
   })
 
   $(".bottomlist").children().eq(3).hide('slow', () => {
