@@ -61,6 +61,7 @@ img
   @include borderandbox($border-line,$border-box)
   @include border-radius($border-radius)
   @include buttons($arrow2, $center)
+  margin-top: 10px
 
 #button1:hover
   @include buttons($arrow3, $center)
@@ -94,8 +95,10 @@ h1, .description
   @include float-display($left, $flex)
 
 .btn1
+  display: $flex
   float: right
   margin-right: 20px
+  flex-direction: $column
 
 .container2
   width: 1080px
@@ -107,6 +110,9 @@ h1, .description
 
 .main-container
   display: $flex
+
+/*ul
+  list-style: none*/
 
 img
   -webkit-animation-name: $animation-name

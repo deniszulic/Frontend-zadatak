@@ -12,11 +12,13 @@ for (let i of [...Array(4).keys()]) {
 }
 $("#button1").click(() => {
   $("#button1").attr("disabled", true);
+  $("#button2").attr("disabled", true);
   $(".toplist").children().eq(4).hide('slow', () => {
     $(".toplist").find(":last-child").remove().prependTo(".toplist");
     $(".toplist").find(":first-child").attr("style", "display:block");
     $(".toplist").children().eq(5).attr("style", "display:none")
     $("#button1").attr("disabled", false);
+    $("#button2").attr("disabled", false);
   })
 
   $(".bottomlist").children().eq(3).hide('slow', () => {
@@ -26,11 +28,13 @@ $("#button1").click(() => {
   })
 });
 $("#button2").click(() => {
+  $("#button1").attr("disabled", true);
   $("#button2").attr("disabled", true);
   $(".toplist").find(":first-child").hide('slow', () => {
     $(".toplist").find(":first-child").remove().appendTo(".toplist");
     $(".toplist").find(":last-child").attr("style", "display:none");
     $(".toplist").children().eq(4).attr("style", "display:block")
+    $("#button1").attr("disabled", false);
     $("#button2").attr("disabled", false);
   })
 
