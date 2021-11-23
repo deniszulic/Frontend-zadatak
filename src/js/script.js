@@ -1,5 +1,5 @@
-let slides = $(".toplist").children();
-let slides_bottom = $(".bottomlist").children();
+let slides = $(".container-top").children();
+let slides_bottom = $(".container-bottomlist").children();
 for (let i of [...Array(slides.length).keys()]) {
   slides[i].style.display = "none";
   slides_bottom[i].style.display = "none";
@@ -10,37 +10,37 @@ for (let i of [...Array(5).keys()]) {
 for (let i of [...Array(4).keys()]) {
   slides_bottom[i].style.display = "block";
 }
-$("#button1").click(() => {
-  $("#button1").attr("disabled", true);
-  $("#button2").attr("disabled", true);
-  $(".toplist").children().eq(4).hide('slow', () => {
-    $(".toplist").find(":last-child").remove().prependTo(".toplist");
-    $(".toplist").find(":first-child").attr("style", "display:block");
-    $(".toplist").children().eq(5).attr("style", "display:none")
-    $("#button1").attr("disabled", false);
-    $("#button2").attr("disabled", false);
+$("#container-first-button").click(() => {
+  $("#container-first-button").attr("disabled", true);
+  $("#container-second-button").attr("disabled", true);
+  $(".container-top").children().eq(4).hide('slow', () => {
+    $(".container-top").find(":last-child").remove().prependTo(".container-top");
+    $(".container-top").find(":first-child").attr("style", "display:block");
+    $(".container-top").children().eq(5).attr("style", "display:none")
+    $("#container-first-button").attr("disabled", false);
+    $("#container-second-button").attr("disabled", false);
   })
 
-  $(".bottomlist").children().eq(3).hide('slow', () => {
-    $(".bottomlist").find(":last-child").remove().prependTo(".bottomlist");
-    $(".bottomlist").find(":first-child").attr("style", "display:block");
-    $(".bottomlist").children().eq(4).attr("style", "display:none")
+  $(".container-bottomlist").children().eq(3).hide('slow', () => {
+    $(".container-bottomlist").find(":last-child").remove().prependTo(".container-bottomlist");
+    $(".container-bottomlist").find(":first-child").attr("style", "display:block");
+    $(".container-bottomlist").children().eq(4).attr("style", "display:none")
   })
 });
-$("#button2").click(() => {
-  $("#button1").attr("disabled", true);
-  $("#button2").attr("disabled", true);
-  $(".toplist").find(":first-child").hide('slow', () => {
-    $(".toplist").find(":first-child").remove().appendTo(".toplist");
-    $(".toplist").find(":last-child").attr("style", "display:none");
-    $(".toplist").children().eq(4).attr("style", "display:block")
-    $("#button1").attr("disabled", false);
-    $("#button2").attr("disabled", false);
+$("#container-second-button").click(() => {
+  $("#container-first-button").attr("disabled", true);
+  $("#container-second-button").attr("disabled", true);
+  $(".container-top").find(":first-child").hide('slow', () => {
+    $(".container-top").find(":first-child").remove().appendTo(".container-top");
+    $(".container-top").find(":last-child").attr("style", "display:none");
+    $(".container-top").children().eq(4).attr("style", "display:block")
+    $("#container-first-button").attr("disabled", false);
+    $("#container-second-button").attr("disabled", false);
   })
 
-  $(".bottomlist").find(":first-child").hide('slow', () => {
-    $(".bottomlist").find(":first-child").remove().appendTo(".bottomlist");
-    $(".bottomlist").find(":last-child").attr("style", "display:none");
-    $(".bottomlist").children().eq(3).attr("style", "display:block")
+  $(".container-bottomlist").find(":first-child").hide('slow', () => {
+    $(".container-bottomlist").find(":first-child").remove().appendTo(".container-bottomlist");
+    $(".container-bottomlist").find(":last-child").attr("style", "display:none");
+    $(".container-bottomlist").children().eq(3).attr("style", "display:block")
   })
 });

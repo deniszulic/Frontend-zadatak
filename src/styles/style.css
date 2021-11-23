@@ -18,23 +18,23 @@ header {
   height: 100px;
 }
 
-.header1, .header2, .center {
+.header-first, .header-second, .footer {
   background-color: #dddddd;
   width: 300px;
   border-radius: 0px 0px 5px 5px;
 }
 
-.header1 {
+.header-first {
   height: 100px;
 }
 
-.header2 {
+.header-second {
   margin-left: 19px;
   width: 621px;
   height: 100px;
 }
 
-.title, .title2 {
+.header-second-title, .footer-title {
   margin-top: 39px;
   width: 245px;
   height: 18px;
@@ -45,13 +45,13 @@ header {
   color: #fff;
 }
 
-.center {
+.footer {
   margin: 0px auto;
   width: 941px;
   border-radius: 5px 5px 0px 0px;
 }
 
-.title2 {
+.footer-title {
   top: 42px;
   left: 81px;
 }
@@ -62,7 +62,7 @@ img {
   margin: 0px 5px 10px 0px;
 }
 
-#button1 {
+#container-first-button {
   width: 60px;
   height: 60px;
   background: url("../../assets/arrow-gray-right.png") no-repeat;
@@ -72,7 +72,7 @@ img {
   border-radius: 5px;
 }
 
-#button2 {
+#container-second-button {
   width: 60px;
   height: 60px;
   border: 1px solid #dddddd;
@@ -83,19 +83,19 @@ img {
   margin-top: 10px;
 }
 
-#button1:hover {
+#container-first-button:hover {
   background: url("../../assets/arrow-blue-right.png") no-repeat;
   background-position: center;
   border: 1px solid #134880;
 }
 
-#button2:hover {
+#container-second-button:hover {
   background: url("../../assets/arrow-blue-left.png") no-repeat;
   background-position: center;
   border: 1px solid #134880;
 }
 
-h1, .description {
+h1, .letters-description {
   width: 300.93px;
   font-family: Source Sans Pro;
   letter-spacing: -0.2px;
@@ -105,7 +105,7 @@ h1, .description {
   color: #134880;
 }
 
-.description {
+.letters-description {
   align-items: center;
   height: 156px;
   font-size: 18px;
@@ -113,47 +113,45 @@ h1, .description {
   color: #484a4c;
 }
 
-.container {
+.container-both {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
 }
 
-.toplist {
+.container-top {
   flex-direction: row;
   width: 1000px;
   float: left;
   display: flex;
 }
 
-.bottomlist {
+.container-bottomlist {
   float: left;
   display: flex;
 }
 
-.btn1 {
+.container-buttons {
   display: flex;
   float: right;
   margin-right: 20px;
   flex-direction: column;
 }
 
-.container2 {
+.container-bottom {
   width: 1080px;
   flex-direction: row;
 }
 
-.nested-flex {
+.letters {
   flex-direction: column;
   margin-top: 35px;
 }
 
-.main-container {
+.container {
   display: flex;
 }
 
-/*ul
- * list-style: none*/
 img {
   -webkit-animation-name: img;
   -webkit-animation-duration: 1.5s;

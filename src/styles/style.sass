@@ -15,19 +15,19 @@ header
   display: $flex
   @include width-height(941px, 100px)
 
-.header1, .header2, .center
+.header-first, .header-second, .footer
   background-color: $back-col
   width: 300px
   @include border-radius (0px 0px 5px 5px)
 
-.header1
+.header-first
   height: 100px
 
-.header2
+.header-second
   margin-left: 19px
   @include width-height(621px, 100px)
 
-.title, .title2
+.header-second-title, .footer-title
   margin-top: 39px
   @include width-height(245px, 18px)
   top: 29px
@@ -36,12 +36,12 @@ header
   font-family: "HelveticaNeue"
   color: #fff
 
-.center
+.footer
   margin: $top-page
   width: 941px
   @include border-radius (5px 5px 0px 0px)
 
-.title2
+.footer-title
   top: 42px
   left: 81px
 
@@ -50,69 +50,66 @@ img
   @include border-radius($border-radius)
   margin: 0px 5px 10px 0px
 
-#button1
+#container-first-button
   @include width-height($width-height, $width-height)
   @include buttons($arrow1, $center)
   @include borderandbox($border-line,$border-box)
   @include border-radius($border-radius)
 
-#button2
+#container-second-button
   @include width-height($width-height, $width-height)
   @include borderandbox($border-line,$border-box)
   @include border-radius($border-radius)
   @include buttons($arrow2, $center)
   margin-top: 10px
 
-#button1:hover
+#container-first-button:hover
   @include buttons($arrow3, $center)
   border:$border-line-hover
 
-#button2:hover
+#container-second-button:hover
   @include buttons($arrow4, $center)
   border:$border-line-hover
 
-h1, .description
+h1, .letters-description
   width: 300.93px
   font-family: $font
   letter-spacing: -0.2px
   @include footer(120px, 32px, 37px, #134880)
 
-.description
+.letters-description
   align-items: $center
   @include footer(156px, 18px, 26px, #484a4c)
 
-.container
+.container-both
   margin-top: $width-height
   display: $flex
   flex-direction: $column
 
-.toplist
+.container-top
   flex-direction: $row
   width: 1000px
   @include float-display($left, $flex)
 
-.bottomlist
+.container-bottomlist
   @include float-display($left, $flex)
 
-.btn1
+.container-buttons
   display: $flex
   float: right
   margin-right: 20px
   flex-direction: $column
 
-.container2
+.container-bottom
   width: 1080px
   flex-direction: $row
 
-.nested-flex
+.letters
   flex-direction: $column
   margin-top: 35px
 
-.main-container
+.container
   display: $flex
-
-/*ul
-  list-style: none*/
 
 img
   -webkit-animation-name: $animation-name
