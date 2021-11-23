@@ -85,13 +85,13 @@ img {
 #button1:hover {
   background: url("../../assets/arrow-blue-right.png") no-repeat;
   background-position: center;
-  border-color: blue;
+  border: 1px solid #134880;
 }
 
 #button2:hover {
   background: url("../../assets/arrow-blue-left.png") no-repeat;
   background-position: center;
-  border-color: blue;
+  border: 1px solid #134880;
 }
 
 h1, .description {
